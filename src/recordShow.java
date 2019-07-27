@@ -197,7 +197,7 @@ public class recordShow extends javax.swing.JFrame {
         try {
             DBConnect d=new DBConnect();
             Statement pstmt = d.SelectConnect();
-            ResultSet rs = pstmt.executeQuery("Select count(*) as countOfPresent from delegate_master where attendance=1 && Room_Number like '%"+dayno+"%'");
+            ResultSet rs = pstmt.executeQuery("Select count(*) as countOfPresent from delegate_master where attendance=1 && Room_Number like '%Day "+dayno+"%'");
             String value =null;
             while(rs.next()){
                 value = rs.getString("countOfPresent");
